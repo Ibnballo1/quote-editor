@@ -1,11 +1,11 @@
 require "application_system_test_case"
 
 class QuotesTest < ApplicationSystemTestCase
+  setup do
+    @quote = quotes(:first) # Reference to the first fixture quote
+  end
+  
   test "Creating a new quote" do
-
-    setup do
-      @quote = quotes(:first) # Reference to the first fixture quote
-    end
     # when we visit the Quotes#index page
     # we expect to see a title with the text Quote
     visit quotes_path
@@ -14,7 +14,7 @@ class QuotesTest < ApplicationSystemTestCase
     # when we click on the link with text "New quote"
     # we expect to land on a page with the title "New quote"
     click_on "New quote"
-    assert_selector h1, text: "New quote"
+    assert_selector "h1", text: "New quote"
 
     # When we fill in the name input with "Capybara quote"
     # and we click on "Create quote"
