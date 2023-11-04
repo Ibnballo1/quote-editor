@@ -1,1 +1,26 @@
 // Entry point for your Sass build
+// .my-component {
+//     // The CSS for mobile
+
+//     @include media(tabletAndUp) {
+//         // The CSS for screens bigger than tablets
+//     }
+// }
+
+// Mixins
+@import "mixins/media";
+
+// Configuration
+@import "config/variables";
+@import "config/reset";
+
+// Components
+@import "components/btn";
+@import "components/error_message";
+@import "components/form";
+@import "components/visually_hidden";
+@import "components/quote";
+
+// Layouts
+@import "layouts/container";
+@import "layouts/header";
